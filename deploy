@@ -1,0 +1,6 @@
+For local testing, you can simply run app.py with Python:
+
+bash
+Copy code
+$ python app.py
+  
