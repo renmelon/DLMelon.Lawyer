@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,9 +6,10 @@
     <title>Judicial Sentence Analysis</title>
 </head>
 <body>
-    <h2>Analyze a Judicial Sentence</h2>
-    <form id="analysisForm">
-        <textarea name="sentence" rows="10" cols="50" placeholder="Enter the judicial sentence here..."></textarea><br><br>
+    <h2>Analyze a Judicial Sentence from PDF</h2>
+    <form id="analysisForm" enctype="multipart/form-data">
+        <!-- Input para o arquivo PDF -->
+        <input type="file" name="file" accept=".pdf"><br><br>
         <input type="submit" value="Analyze">
     </form>
     <h3>Analysis Result:</h3>
