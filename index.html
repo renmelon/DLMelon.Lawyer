@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Judicial Sentence Analysis</title>
+</head>
+<body>
+    <h2>Analyze a Judicial Sentence</h2>
+    <form id="analysisForm">
+        <textarea name="sentence" rows="10" cols="50" placeholder="Enter the judicial sentence here..."></textarea><br><br>
+        <input type="submit" value="Analyze">
+    </form>
+    <h3>Analysis Result:</h3>
+    <pre id="result"></pre>
+
+    <script>
+        document.getElementById('analysisForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let formData = new FormData(this);
+            fetch('/analyze', {
+                method: 'POST',
+                body: formData
+            }).then(response => response.json()).then(data => {
+                document.getElementById('result').textContent = data.result;
+            });
+        });
+    </script>
+</body>
+</html>
